@@ -1,21 +1,20 @@
 package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class GreetingController {
+public class DI_AutoWired {
     //Field Injection
     @Autowired
-    DependencyInjection DI;
+    @Qualifier("Secondary") DependencyInjection DI;
 
 
     //Constructor Injection
     @Autowired
-    public GreetingController(DependencyInjection DI)
+    public DI_AutoWired(@Qualifier("Secondary") DependencyInjection DI)
     {
 
         DI.ConstructorInjection();
@@ -23,7 +22,7 @@ public class GreetingController {
 
     //Setter Injection
     @Autowired
-    public void SetterInjection(DependencyInjection DI)
+    public void SetterInjection(@Qualifier("Secondary") DependencyInjection DI)
     {
         DI.SetterInjection();
     }
