@@ -8,22 +8,35 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class GreetingController {
+    //Field Injection
+    @Autowired
     DependencyInjection DI;
 
+
+    //Constructor Injection
     @Autowired
     public GreetingController(DependencyInjection DI)
     {
 
-        this.DI=DI;
+        DI.ConstructorInjection();
     }
+
+    //Setter Injection
+    @Autowired
+    public void SetterInjection(DependencyInjection DI)
+    {
+        DI.SetterInjection();
+    }
+
+
 
 
     @GetMapping("/greeting")
     public String greeting() {
 
-        DI.DoNotReturn();
+        DI.FieldInjection();
 
-        return DI.Hello()+"Hello";
+        return "hello";
 
     }
 }

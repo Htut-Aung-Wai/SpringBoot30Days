@@ -10,9 +10,19 @@ public class DependencyInjection {
         return "Hello this is DI injection ;";
     }
 
-    public void DoNotReturn()
+    public void FieldInjection()
     {
 
-        System.out.println("This is not return function and have to appear in console;;");
+        System.out.println("This is field Injection");
+
+    }
+    public void ConstructorInjection()
+    {
+        System.out.println("This is Constructor Injection");
+    }
+
+    public void SetterInjection()
+    {
+        System.out.println("This is Setter Injection");
     }
 }
