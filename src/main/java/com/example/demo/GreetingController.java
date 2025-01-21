@@ -21,6 +21,8 @@ public class GreetingController {
     @GetMapping("/greeting")
     public String greeting() {
 
+        DI.DoNotReturn();
+
         return DI.Hello()+"Hello";
 
     }

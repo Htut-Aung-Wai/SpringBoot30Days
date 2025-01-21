@@ -13,6 +13,6 @@ public class DependencyInjection {
     public void DoNotReturn()
     {
 
-        System.out.println("This is not return function ;;");
+        System.out.println("This is not return function and have to appear in console;;");
     }
 }
