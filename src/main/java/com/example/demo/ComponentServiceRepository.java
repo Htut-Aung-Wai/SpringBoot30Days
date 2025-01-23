@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,8 @@ public class ComponentServiceRepository {
     Repo rep;
     @Autowired
     BeanTest bt;
+    @Value("${spring.application.name}")
+    private String springApplicationName;
 
 
 
@@ -27,6 +30,7 @@ public class ComponentServiceRepository {
         ser.ReturnService();
         rep.ReturnRepo();
         bt.hello(); //do not use component just bean which is configured in Appconfig.java
+        System.out.println("Value usuage : "+springApplicationName);
     }
 
 
