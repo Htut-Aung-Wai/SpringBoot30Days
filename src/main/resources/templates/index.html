@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thymeleaf Template Example</title>
+</head>
+<body>
+<h1>Welcome to Thymeleaf, <span th:text="${name}">Name</span>!</h1>
+<p>Current date and time: <span th:text="${currentDate}">Date</span></p>
+
+<ul>
+    <li th:each="item : ${items}">
+        <span th:text="${item}"></span>
+    </li>
+</ul>
+</body>
+</html>
