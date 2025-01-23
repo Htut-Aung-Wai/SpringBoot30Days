@@ -15,6 +15,8 @@ public class ComponentServiceRepository {
     Services ser;
     @Autowired
     Repo rep;
+    @Autowired
+    BeanTest bt;
 
 
 
@@ -24,6 +26,7 @@ public class ComponentServiceRepository {
         System.out.println(compo.ReturnComponents());
         ser.ReturnService();
         rep.ReturnRepo();
+        bt.hello(); //do not use component just bean which is configured in Appconfig.java
     }
 
 
